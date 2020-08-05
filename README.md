@@ -24,9 +24,9 @@ Please stick to the Product Requirements. You should not implement authorisation
 - Typescript is a plus
 
 ## Instructions
-- The challenge is on!
 - Build a performant, **clean and well-structured solution**.
 - Commit early and often. We want to be able to check your progress.
+- Please complete your working solution within 3 days of receiving this challenge.
+- Please **do not** spend more than 4 hours.
 - **Send us an email with a link to repository when you finish the assesment**.
-- Please do not spend more than 4 hours.
-- Please complete your working solution within 7 days of receiving this challenge.
+- **Optionally, send us a link to a deployed version on Vercel or any other service that will expose that API for testing**.
