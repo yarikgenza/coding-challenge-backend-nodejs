@@ -22,7 +22,10 @@ Please stick to the Product Requirements. You should not implement authorisation
 - You are free to use any framework, but it’s recommended that you use one that you’re good at
 - Use only SQL Database
 - Typescript is a plus
-- For your convenience, you can use one of our service bootstrap template to help you started coding quicker without a hassle, but please note - it has our own opinionated Linting: **https://github.com/join-com/server-template-public**
+
+## Starting Materials
+For your convenience, you can use one of our service bootstrap template to help you started coding quicker without a hassle, 
+but please note - it has our own opinionated Linting and Typescript by default: **https://github.com/join-com/server-template-public**
 
 ## Instructions
 - Build a performant, **clean and well-structured solution**.
