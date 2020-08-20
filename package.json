@@ -1,0 +1,8 @@
+{
+  "name": "join-test-assigment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yarikgenza/join-test-assigment.git",
+  "author": "Yarik Henza <gsmeter@gmail.com>",
+  "license": "MIT"
+}
