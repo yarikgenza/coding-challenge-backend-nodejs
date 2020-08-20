@@ -47,7 +47,7 @@ const resolveCase = async (req: Request, res: Response) => {
         return res.json(resolvedCase);
     } catch (error) {
         return res
-        .status(422)
+        .status(500)
         .json({ error: error.message });
     }
 };

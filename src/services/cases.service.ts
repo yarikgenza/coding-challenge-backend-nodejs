@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 import { Case, CaseStatus, CaseBody } from '../models/types';
+import handler from '../handlers/cases.handler';
 
 const models: any = require('../models');
 
@@ -28,10 +29,13 @@ class CasesService implements ICasesService {
         resolvedCase.officerId = null;
         resolvedCase.status = CaseStatus.RESOLVED;
         await resolvedCase.save();
+
+        handler.emit('officerAvailable');
+
         return resolvedCase;
     }
 
-    public assignToFreeOfficer = async (caseId: string) => {
+    assignToFreeOfficer = async (caseId: string) => {
         const freeOfficer = await models.Officer.findOne({
             where: Sequelize.literal('"Case"."officerId" IS null'),
             include: models.Case,
@@ -47,7 +51,7 @@ class CasesService implements ICasesService {
         }
     }
 
-    public assignPendingCases = async () => {
+    assignPendingCases = async () => {
         const {
             count: freeOfficersCount,
             rows: freeOfficers
