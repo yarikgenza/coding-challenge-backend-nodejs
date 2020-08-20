@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
+import CaseService from '../services/cases.service';
 
 const listCases = async (req: Request, res: Response) => {
     try {
-        const cases = [{ test: "case here"}];
+        const cases = await CaseService.getList();
         return res.json(cases);
     } catch (error) {
         return res
@@ -14,7 +15,7 @@ const listCases = async (req: Request, res: Response) => {
 const getCase = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        const item = {} // ...get by id
+        const item = await CaseService.getOneById(id);
         if (item) {
             return res.json(item)
         } else {
@@ -30,7 +31,7 @@ const getCase = async (req: Request, res: Response) => {
 const createNewCase = async (req: Request, res: Response) => {
     try {
         const { body } = req;
-        const createdCase = { body } // create
+        const createdCase = await CaseService.createNew(body);
         res.send(createdCase);
     } catch (error) {
         return res
@@ -42,7 +43,7 @@ const createNewCase = async (req: Request, res: Response) => {
 const resolveCase = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        const resolvedCase = {} /// resolve...
+        const resolvedCase = await CaseService.resolve(id);
         return res.json(resolvedCase);
     } catch (error) {
         return res
