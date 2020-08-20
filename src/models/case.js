@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Case = sequelize.define('Case', {
-    reportedBy: {
+    reporter: {
       type: DataTypes.STRING,
       allowNull: false,
     },
